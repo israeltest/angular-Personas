@@ -1,0 +1,1 @@
+export interface SolicitudDto { personaId: number; estado: string; }

@@ -1,0 +1,28 @@
+<div class="d-flex justify-content-between mb-3">
+  <h3>Personas Registradas</h3>
+  <a class="btn btn-primary" [routerLink]="['/crear']">Nueva Persona</a>
+</div>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Edad</th>
+      <th>Estado Civil</th>
+      <th>Fecha Nac.</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of personaService.personas()">
+      <td>{{ p.nombre }}</td>
+      <td>{{ p.edad }}</td>
+      <td>{{ p.estadoCivil }}</td>
+      <td>{{ p.fechaNacimiento | date:'shortDate' }}</td>
+      <td>
+        <a [routerLink]="['/editar', p.id]" class="btn btn-sm btn-warning">Editar</a>
+        <button class="btn btn-sm btn-danger ms-2" (click)="eliminar(p.id)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

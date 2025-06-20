@@ -1,0 +1,45 @@
+<h3>{{ isEdit ? 'Editar Persona' : 'Crear Persona' }}</h3>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label>Nombre</label>
+      <input formControlName="nombre" class="form-control" [class.is-invalid]="form.get('nombre')?.invalid && form.get('nombre')?.touched" />
+    <div class="invalid-feedback" *ngIf="form.get('nombre')?.hasError('required')">
+      El nombre es obligatorio.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label>Edad</label>
+    <input formControlName="edad" type="number" class="form-control" class="form-control" [class.is-invalid]="form.get('edad')?.invalid && form.get('edad')?.touched" />
+    <div class="invalid-feedback" *ngIf="form.get('edad')?.hasError('required')">
+      La edad es obligatoria.
+    </div>
+    <div class="invalid-feedback" *ngIf="form.get('edad')?.hasError('min')">
+      Debe tener al menos 18 años.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label>Estado Civil</label>
+    <select formControlName="estadoCivil" class="form-control" [class.is-invalid]="form.get('estadoCivil')?.invalid && form.get('estadoCivil')?.touched">
+      <option value="">Seleccione</option>
+      <option value="Soltero">Soltero</option>
+      <option value="Casado">Casado</option>
+      <option value="Viudo">Viudo</option>
+    </select>
+    <div class="invalid-feedback" *ngIf="form.get('estadoCivil')?.hasError('required')">
+      Debe seleccionar un estado civil.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <input type="date" formControlName="fechaNacimiento" class="form-control" [class.is-invalid]="form.get('fechaNacimiento')?.invalid && form.get('fechaNacimiento')?.touched" />
+    <div class="invalid-feedback" *ngIf="form.get('fechaNacimiento')?.hasError('required')">
+      La fecha de nacimiento es obligatoria.
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-success">Guardar</button>
+  <a class="btn btn-secondary ms-2" [routerLink]="['/']">Cancelar</a>
+</form>

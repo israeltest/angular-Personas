@@ -1,0 +1,31 @@
+<h3>Lista de Solicitudes</h3>
+<div class="row mb-3">
+  <div class="col">
+    <select [(ngModel)]="dto.personaId" class="form-select">
+      <option value="0">Selecciona Persona</option>
+      <option *ngFor="let p of personas()" [value]="p.id">{{ p.nombre }}</option>
+    </select>
+  </div>
+  <div class="col">
+    <select [(ngModel)]="dto.estado" class="form-select">
+      <option>En proceso</option>
+      <option>Realizado</option>
+      <option>Rechazado</option>
+    </select>
+  </div>
+  <div class="col">
+    <button class="btn btn-primary" (click)="crear()" [disabled]="!dto.personaId">Crear Solicitud</button>
+  </div>
+</div>
+
+<table class="table">
+  <thead><tr><th>ID</th><th>Persona</th><th>Estado</th><th>Fecha</th></tr></thead>
+  <tbody>
+    <tr *ngFor="let s of servicio.solicitudes()">
+      <td>{{ s.id }}</td>
+      <td>{{ s.nombrePersona }}</td>
+      <td>{{ s.estado }}</td>
+      <td>{{ s.fecha | date:'short' }}</td>
+    </tr>
+  </tbody>
+</table>
