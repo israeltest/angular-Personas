@@ -1,0 +1,64 @@
+Instalar Node.js con NVM (Node Version Manager)
+Instalar nvm-setup
+Descarga e instala nvm-setup desde su sitio oficial.
+
+Abrir una consola (CMD) y ejecutar:
+
+nvm install 20.16.0
+nvm use 20.16.0
+node --version
+Debería mostrar:
+v20.16.0
+
+✅ Instalar Angular CLI
+Abrir PowerShell como usuario y permitir la ejecución de scripts:
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+Abrir consola de nuevo y ejecutar:
+
+npm install -g @angular/cli@19.0.0
+ng --version
+
+✅ Crear un nuevo proyecto Angular
+Ubícate en la carpeta donde quieras crear el proyecto y ejecuta:
+
+ng new angular-peliculas
+Elige CSS como preprocesador de estilos.
+Di No cuando pregunte por el enrutamiento (router).
+
+Entra a la carpeta del proyecto:
+cd angular-peliculas
+
+Abre el proyecto en Visual Studio Code:
+code .
+
+En Visual Studio Code:
+Ve a la sección de extensiones.
+Instala la extensión: Angular Language Service.
+
+israel.cevallos1792@hotmail.com  israel.cevallos_17
+
+✅ Ejecutar el proyecto Angular
+Abre la terminal integrada (Ctrl + Ñ o desde el menú Terminal).
+
+Inicia el servidor de desarrollo:
+ng serve -o
+Esto abrirá automáticamente el proyecto en tu navegador.
+
+Generar componente: 
+ng generate component user-list    
+ng generate component components/user-list
+Generar Servicio:
+d> ng generate service services/user    
+ng genera
+
+
+ng generate component components/persona-formulario
+ng generate component components/persona-formulo
+
+
+
+
+Comando para PowerShell:
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+
+
